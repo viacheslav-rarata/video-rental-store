@@ -1,0 +1,20 @@
+server:
+  servlet.context-path: /video-rental-store
+
+---
+spring:
+  profiles: local-dev
+  datasource:
+    url: jdbc:postgresql://localhost:5432/video-rental-store
+    username: postgres
+    password: super
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    baseline-on-migrate: true
+
+server:
+  port: 8001
